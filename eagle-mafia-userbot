@@ -4,22 +4,22 @@
 _get_repolink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $MAFIA_REPO == "LION-TEAM" ]]
+    if [[ $LION_REPO == "LION-TEAM" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbWVlcnBhbnRoaS9FQUdMSS1NQUZJQS1VU0VSQk9UL2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
-    elif [[ $MAFIA_REPO == "LION-TEAM" ]]
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0xJT04tSVEvTElPTi1URUFNL2FyY2hpdmUvTUFTVEVSLnppcA==" | base64 -d
+    elif [[ $LION_REPO == "LION-TEAM" ]]
     then
-        echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbWVlcnBhbnRoaS9FQUdMSS1NQUZJQS1VU0VSQk9UL2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
-    elif [[ $MAFIA_REPO =~ $regex ]]
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0xJT04tSVEvTElPTi1URUFNL2FyY2hpdmUvTUFTVEVSLnppcA==" | base64 -d
+    elif [[ $LION_REPO =~ $regex ]]
     then
-        if [[ $MAFIA_REPO_BRANCH ]]
+        if [[ $LION_REPO_BRANCH ]]
         then
-            echo "${MAFIA_REPO}/archive/${MAFIA_REPO_BRANCH}.zip"
+            echo "${LION_REPO}/archive/${LION_REPO_BRANCH}.zip"
         else
-            echo "${MAFIA_REPO}/archive/master.zip"
+            echo "${LION_REPO}/archive/master.zip"
         fi
     else
-        echo "aHR0cHM6Ly9naXRodWIuY29tL3NhbWVlcnBhbnRoaS9FQUdMSS1NQUZJQS1VU0VSQk9UL2FyY2hpdmUvbWFzdGVyLnppcA==" | base64 -d
+        echo "aHR0cHM6Ly9naXRodWIuY29tL0xJT04tSVEvTElPTi1URUFNL2FyY2hpdmUvTUFTVEVSLnppcA==" | base64 -d
     fi
 }
 
@@ -37,7 +37,7 @@ _set_bot () {
     rm -rf "$zippath"
     sleep 5
     cd $MAFIAPATH
-    echo "    Starting eagle mafia bot    "
+    echo "    تم تنصيب البوت    "
     echo "
                           ╔═╦═╦══╦══╦══╦══╦══╦═╦══╗
                           ║║║║║╔╗║═╦╩║║╣╔╗║╔╗║║╠╗╔╝
